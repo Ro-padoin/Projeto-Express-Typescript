@@ -1,6 +1,7 @@
 export interface Description {
+  id?: number | null;
   name: string;
-  amount: number
+  amount: string;
 }
 
 export interface Product extends Description {
