@@ -18,9 +18,8 @@ export default class ProductsModel {
   public async createNewProduct(product: Description): Promise<Description> {
     const { name, amount } = product;
     const QUERY = 'INSERT INTO Trybesmith.Products (name, amount) VALUES (?, ?);';
-    const insertProduct = await this.connection.execute<ResultSetHeader>(QUERY, [name, amount]);
-    const [valuesInserted] = insertProduct;
-    const { insertId } = valuesInserted;
+    const [insertProduct] = await this.connection.execute<ResultSetHeader>(QUERY, [name, amount]);
+    const { insertId } = insertProduct;
     return { id: insertId, ...product };
   }
 }
