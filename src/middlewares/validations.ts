@@ -14,7 +14,7 @@ const validateProduct = (req: Request, res: Response, next: NextFunction) => {
   const result = valid.schemaProduct.validate(body);
   if (result.error) {
     const { type, message } = result.error.details[0];
-    createReturnError(type, message, res);
+    return createReturnError(type, message, res);
   }
   next();
 };
@@ -24,7 +24,7 @@ const validateUser = (req: Request, res: Response, next: NextFunction) => {
   const result = valid.schemaUser.validate(body);
   if (result.error) {
     const { type, message } = result.error.details[0];
-    createReturnError(type, message, res);
+    return createReturnError(type, message, res);
   }
   next();
 };
@@ -34,7 +34,7 @@ const validateLogin = (req: Request, res: Response, next: NextFunction) => {
   const result = valid.schemaLogin.validate(body);
   if (result.error) {
     const { type, message } = result.error.details[0];
-    createReturnError(type, message, res);
+    return createReturnError(type, message, res);
   }
   next();
 };
