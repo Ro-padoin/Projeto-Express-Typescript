@@ -9,8 +9,10 @@ export default class LoginController {
     try {
       const user = req.body;
       const token = await this.loginService.createLogin(user);  
-      res.status(StatusCodes.CREATED).json({ token });
+      res.status(StatusCodes.OK).json({ token });
     } catch (error: unknown) {
+      console.log(error);
+      
       if (error instanceof Error) {
         res
           .status(StatusCodes.UNAUTHORIZED).json({ message: error.message });

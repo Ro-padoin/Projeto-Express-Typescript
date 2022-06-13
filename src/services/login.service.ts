@@ -16,7 +16,10 @@ export default class LoginService {
     const { username, password } = user;
 
     const result = await this.model.getByUsername(username);
-    if (result.username !== username || result.password !== password) throw new Error(message);
+    
+    if (!result || result.username !== username || result.password !== password) { 
+      throw new Error(message);
+    }
     
     const { password: trashPassword, ...dataToToken } = result;
 
