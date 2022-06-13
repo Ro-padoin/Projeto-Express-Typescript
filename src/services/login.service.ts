@@ -1,22 +1,26 @@
 import connection from '../models/connection';
-import LoginModel from '../models/login.model';
+import UserModel from '../models/users.model';
 import generateToken from '../helpers/generateToken';
-// import User from '../interface/user.interface';
+import User from '../interface/user.interface';
+
+const message = 'Username or password invalid';
 
 export default class LoginService {
-  public model: LoginModel;
+  public model: UserModel;
 
   constructor() {
-    this.model = new LoginModel(connection);
+    this.model = new UserModel(connection);
   }
 
-  public async createLogin(user: any) {
-    const userCreated = await this.model.createLogin(user);
+  public async createLogin(user: User) {
+    const { username, password } = user;
+
+    const result = await this.model.getByUsername(username);
+    if (result.username !== username || result.password !== password) throw new Error(message);
     
-    const { password, ...dataToToken } = userCreated;
+    const { password: trashPassword, ...dataToToken } = result;
 
     const token = generateToken(dataToToken);
-    console.log('service');
     
     return token;
   }

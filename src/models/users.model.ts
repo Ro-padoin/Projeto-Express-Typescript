@@ -17,4 +17,13 @@ export default class ProductsModel {
     const { insertId } = insertedUser;
     return { id: insertId, ...user };
   }
+
+  public async getByUsername(username: string): Promise<User> {
+    const QUERY = 'SELECT id, username, password FROM Trybesmith.Users WHERE username=?;';
+    const result = await this.connection
+      .execute(QUERY, [username]);
+    const [rows] = result;
+    const [user] = rows as User[];
+    return user;
+  }
 }

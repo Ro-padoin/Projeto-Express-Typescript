@@ -6,9 +6,15 @@ export default class LoginController {
   constructor(private loginService = new LoginService()) { }
 
   public createLogin = async (req: Request, res: Response) => {
-    const user = req.body;
-    const token = await this.loginService.createLogin(user);
-    console.log('controller');    
-    res.status(StatusCodes.CREATED).json({ token });
+    try {
+      const user = req.body;
+      const token = await this.loginService.createLogin(user);  
+      res.status(StatusCodes.CREATED).json({ token });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        res
+          .status(StatusCodes.UNAUTHORIZED).json({ message: error.message });
+      }
+    }
   };
 }
