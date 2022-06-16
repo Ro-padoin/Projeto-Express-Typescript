@@ -1,5 +1,5 @@
 import { Pool, ResultSetHeader } from 'mysql2/promise';
-import { Product, Description } from '../interface/product.interface';
+import { Description, Product } from '../interface/product.interface';
 
 export default class ProductsModel {
   public connection: Pool;
@@ -27,5 +27,10 @@ export default class ProductsModel {
     const QUERY = 'SELECT * FROM Trybesmith.Products WHERE orderId = ?;';
     const [data] = await this.connection.execute(QUERY, [orderId]);
     return data as Product[];
+  }
+
+  public async updateOrderOfProduct(id: number, orderId: number) {
+    const QUERY = 'UPDATE Trybesmith.Products SET orderId = ? WHERE id = ?;';
+    await this.connection.execute<ResultSetHeader>(QUERY, [orderId, id]);
   }
 }

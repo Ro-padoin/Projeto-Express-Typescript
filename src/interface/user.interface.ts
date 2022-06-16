@@ -5,3 +5,8 @@ export interface User {
   level: number
   password?: string 
 }
+
+export interface UserInfo {
+  id: string
+  username: string
+}

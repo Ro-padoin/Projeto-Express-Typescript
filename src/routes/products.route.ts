@@ -3,9 +3,8 @@ import ProductsController from '../controllers/products.controller';
 import isValid from '../middlewares/validations';
 
 const router = Router();
-const productsController = new ProductsController();
 
-router.get('/products', productsController.getAllProducts);
-router.post('/products', isValid.validateProduct, productsController.createNewProduct);
+router.get('/products', ProductsController.getAllProducts);
+router.post('/products', isValid.validateProduct, ProductsController.createNewProduct);
 
 export default router;

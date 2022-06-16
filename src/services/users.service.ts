@@ -1,7 +1,7 @@
 import connection from '../models/connection';
 import UsersModel from '../models/users.model';
 import generateToken from '../helpers/generateToken';
-import User from '../interface/user.interface';
+import { User } from '../interface/user.interface';
 
 export default class UsersService {
   public model: UsersModel;

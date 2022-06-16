@@ -3,8 +3,7 @@ import LoginCrontroller from '../controllers/login.controller';
 import isValid from '../middlewares/validations';
 
 const router = Router();
-const loginCrontroller = new LoginCrontroller();
 
-router.post('/login', isValid.validateLogin, loginCrontroller.createLogin);
+router.post('/login', isValid.validateLogin, LoginCrontroller.createLogin);
 
 export default router;

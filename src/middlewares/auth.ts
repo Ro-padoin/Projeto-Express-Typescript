@@ -1,29 +1,71 @@
 import { Request, Response, NextFunction } from 'express';
-import jwt, { JwtPayload } from 'jsonwebtoken';
+import * as jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import { StatusCodes } from 'http-status-codes';
-
-interface UserInfoRequest extends Request {
-  userInfo: string | JwtPayload | undefined
-}
 
 dotenv.config();
 
 const secretKey = process.env.JWT_SECRET;
 
-const validateAuth = (req: UserInfoRequest, res: Response, next: NextFunction) => {
+type TokenPayload = {
+  id: string
+  username: string
+};
+
+const validateAuth = (req: Request, res: Response, next: NextFunction) => {
   const token = req.headers.authorization;
     
   if (!token || !secretKey) {
     return res
-      .status(StatusCodes.UNAUTHORIZED).json({ message: 'Token not Found' });
+      .status(StatusCodes.UNAUTHORIZED).json({ message: 'Token not found' });
   }
 
-  jwt.verify(token, secretKey, (error, userInfo) => {
-    if (error) return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Invalid token' });
-    req.userInfo = userInfo;
-  });    
-  next();
+  try {
+    const data = jwt.verify(token, secretKey);
+    req.userInfo = data as unknown as TokenPayload;
+    
+    next();
+  } catch {
+    return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Invalid token' });
+  }
 };
 
 export default validateAuth;
+
+// const secretKey = process.env.JWT_SECRET;
+
+// interface UserPayload {
+//   id: number
+//   username: string
+// }
+
+// interface UserInfo extends Request {
+//   userInfo: {
+//     id: number
+//     username: string
+//   }
+// }
+
+// const validateAuth = (req: UserInfo, res: Response, next: NextFunction) => {
+//   const token = req.headers.authorization;
+    
+//   if (!token || !secretKey) {
+//     return res
+//       .status(StatusCodes.UNAUTHORIZED).json({ message: 'Token not Found' });
+//   }
+
+//   jwt.verify(token, secretKey, (error: unknown, user) => {
+//     if (error) return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Invalid token' });
+//     req.userInfo = user as unknown as UserPayload;
+//   });
+//   next();  
+// }
+
+// try {
+//   const data = jwt.verify(token, secretKey);      
+//   req.userInfo = data as TokenPayload;
+    
+//   next();
+// } catch {
+//   return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Invalid token' });
+// }

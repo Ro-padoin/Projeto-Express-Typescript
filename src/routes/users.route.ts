@@ -3,8 +3,7 @@ import UsersController from '../controllers/users.controller';
 import isValid from '../middlewares/validations';
 
 const router = Router();
-const usersController = new UsersController();
 
-router.post('/users', isValid.validateUser, usersController.createNewUser);
+router.post('/users', isValid.validateUser, UsersController.createNewUser);
 
 export default router;

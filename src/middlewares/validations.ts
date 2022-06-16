@@ -39,4 +39,14 @@ const validateLogin = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
 
-export default { validateProduct, validateUser, validateLogin };
+const validateOrders = (req: Request, res: Response, next: NextFunction) => {
+  const { body } = req;
+  const result = valid.schemaOrders.validate(body);
+  if (result.error) {
+    const { type, message } = result.error.details[0];
+    return createReturnError(type, message, res);
+  }
+  next();
+};
+
+export default { validateProduct, validateUser, validateLogin, validateOrders };

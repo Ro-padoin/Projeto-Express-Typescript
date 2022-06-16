@@ -1,7 +1,8 @@
 import connection from '../models/connection';
 import ProductsModel from '../models/products.model';
 import OrdersModel from '../models/orders.model';
-import { Orders } from '../interface/order.interface';
+import { Orders, OrdersCreate } from '../interface/order.interface';
+import { UserInfo } from '../interface/user.interface';
 
 export default class OrdersService {
   public model: [OrdersModel, ProductsModel];
@@ -26,5 +27,17 @@ export default class OrdersService {
       }));
 
     return productsIds;
+  }
+
+  public async createOrder(body: OrdersCreate, userInfo: UserInfo) {
+    const { id } = userInfo;
+    const { productsIds } = body;
+    const newOrder = await this.model[0].createNewOrder(Number(id));
+    await Promise.all(productsIds.map(async (productId) => this.model[1]
+      .updateOrderOfProduct(productId, newOrder)));
+    return {
+      userId: id,
+      productsIds,
+    };
   }
 }

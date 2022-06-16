@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import UsersService from '../services/users.service';
 
-export default class UsersController {
+class UsersController {
   constructor(private usersService = new UsersService()) { }
 
   public createNewUser = async (req: Request, res: Response) => {
@@ -11,3 +11,5 @@ export default class UsersController {
     res.status(StatusCodes.CREATED).json({ token });
   };
 }
+
+export default new UsersController();
