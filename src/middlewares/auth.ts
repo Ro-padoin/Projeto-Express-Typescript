@@ -5,7 +5,8 @@ import { StatusCodes } from 'http-status-codes';
 
 dotenv.config();
 
-const secretKey = process.env.JWT_SECRET;
+const secretKey = process.env.JWT_SECRET 
+  || 'un-Y&RyAHU-G_jN4Dzp%ydTJLdMzr8MwZSjG*JWM+bD6!y%62?8pKwUdh_hZ&GCNUs5DS?W+9r';
 
 type TokenPayload = {
   id: string
