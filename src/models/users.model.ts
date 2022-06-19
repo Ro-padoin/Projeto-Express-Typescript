@@ -20,10 +20,9 @@ export default class ProductsModel {
 
   public async getByUsername(username: string): Promise<User> {
     const QUERY = 'SELECT id, username, password FROM Trybesmith.Users WHERE username=?;';
-    const result = await this.connection
+    const [result] = await this.connection
       .execute(QUERY, [username]);
-    const [rows] = result;
-    const [user] = rows as User[];
+    const [user] = result as User[];
     return user;
   }
 }
