@@ -1,36 +1,51 @@
-# Boas vindas ao repositório do projeto Trybesmith!
+# Projeto TrybeSmith!
 
-Para realizar o projeto, atente-se a cada passo descrito a seguir, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
+<h1> Projeto TrybeSmith || 
+  Criação de uma loja de itens medievais, no formato de uma _API_, utilizando _Typescript_</h1>
 
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
+<br/>
 
-# Termos e acordos
+## Descricao do Projeto
 
-Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta e do Manual da Pessoa Estudante da Trybe.
+Projeto desenvolvido no bloco 26 - Modulo 3 - Desenvolvimento em BackEnd na turma 17 - Trybe. Conteudos aplicados: Typescript, Tipagens Estáticas e Genérics, Express com Typescript.
 
-# Entregáveis
+<br/>
 
-<details>
-  <summary><strong>🤷🏽‍♀️ Como entregar</strong></summary><br />
 
-  Para entregar o seu projeto você deverá criar um *Pull Request* neste repositório.
+## Desenvolvimento
 
-  Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://app.betrybe.com/course/4d67f5b4-34a6-489f-a205-b6c7dc50fc16/) e nosso [Blog - Git & GitHub](https://blog.betrybe.com/tecnologia/git-e-github/) sempre que precisar!
-</details>
+Para este projeto, você vai criar uma loja de itens medievais, no formato de uma _API_, utilizando _Typescript_.
 
-<details>
-  <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary><br />
+1. Desenvolvimento de todas as camadas da aplicação (_Models_, _Service_ e _Controllers_) e, por meio dessa aplicação, será possível realizar as operações básicas que se pode fazer em um determinado banco de dados:
 
-  Para este projeto, você vai criar uma loja de itens medievais, no formato de uma _API_, utilizando _Typescript_.
-  
-  Você irá desenvolver todas as camadas da aplicação (_Models_, _Service_ e _Controllers_) em seu código e, por meio dessa aplicação, será possível realizar as operações básicas que se pode fazer em um determinado banco de dados:
-  Criação, Leitura, Atualização e Exclusão (ou `CRUD`, para as pessoas mais íntimas 😜 - _Create, Read, Update_ e _Delete_).
+ - Criação, Leitura, Atualização e Exclusão (ou `CRUD` - _Create, Read, Update_ e _Delete_).
 
-  Você irá criar alguns _endpoints_ que irão ler e escrever em um banco de dados, utilizando o **MySQL**.
+2. Criação de alguns _endpoints_ que irão ler e escrever em um banco de dados, utilizando o **MySQL**.
 
-  ---
+3. Desenvolvimento do código de cadastro de pessoas usuárias utilizando os conhecimentos adquiridos no bloco.
 
-  O código para cadastro de pessoas usuárias deve ser criado por você utilizando os conhecimentos adquiridos nesse bloco.
+<br/>
+
+## Habilidades desenvolvidas
+
+* Declarar variáveis e funções com tipagens Typescript;
+* Construir uma API Node Express utilizando o Typescript.
+
+<br/>
+
+## Tecnologias utilizadas
+
+- Typescript;
+- Docker;
+- Node.js;
+- Express;
+- Mysql;
+- JsonWebToken;
+- Eslint;
+- Joi.
+
+<br/>
+
 
   ⚠️ **Dicas Importantes** ⚠️:
 
@@ -38,13 +53,6 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
 
   - Sua API deve ser desenvolvida dentro da pasta `./src`.
 </details>
-
-<details>
-  <summary><strong>🗓 Data de Entrega</strong></summary><br />
-  
-  * Este projeto é individual
-  * São `X` dias de projeto
-  * Data para entrega final do projeto: `24/06/2022 14:10`
 
 </details>
 
@@ -784,5 +792,237 @@ Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência 
       }
     ```
 </details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Colaboradores
+
+Projeto realizado individualmente.
+
+<br/>
+
+## Status
+
+Finalizado.
+
+<br/>
+
+## Desempenho
+
+100% nos requisitos totais.
+
+<br/>
+
+## Modelo da tabela recebido com o script da Normalizacao.
+
+Para acessar a tabela original e script da normalizacao, acesse o link do excalidraw:
+
+<https://excalidraw.com/#json=cjLDBBy_omlkRlVpUUO2G,EZzpY36Imu39u4_nEmKWoA/>
+
+
+## Desafio 5
+
+Estamos fazendo um estudo das músicas mais tocadas e precisamos saber quais são as duas músicas mais tocadas no momento. Crie uma `QUERY` que possua duas colunas:
+
+1. A primeira coluna deve possuir o alias "**cancao**" e exibir o nome da canção.
+
+2. A segunda coluna deve possuir o alias "**reproducoes**" e exibir a quantidade de pessoas que já escutaram a canção em questão.
+
+Seu resultado deve estar ordenado em ordem decrescente, baseando-se no número de reproduções. Em caso de empate, ordene os resultados pelo nome da canção em ordem alfabética. Queremos apenas o top 2 de músicas mais tocadas.
+
+Sua `QUERY` deve retornar a seguinte informação:
+
+![Top 2 hits do momento](./images/top_2_hits_do_momento.png)
+
+
+O que será verificado:
+
+- Será validado se existe uma `QUERY` que exibe os dados corretos nas colunas `cancao` e `reproducoes`.
+
+- Será validado se as colunas estão ordenadas de forma correta.
+
+---
+
+## Desafio 6
+
+Tendo como base o valor dos planos e o plano que cada pessoa usuária cadastrada possui no banco, queremos algumas informações sobre o faturamento da empresa. Crie uma `QUERY` que deve exibir quatro dados:
+
+1. A primeira coluna deve ter o alias "**faturamento_minimo**" e exibir o menor valor de plano existente para uma pessoa usuária.
+
+2. A segunda coluna deve ter o alias "**faturamento_maximo**" e exibir o maior valor de plano existente para uma pessoa usuária.
+
+3. A terceira coluna deve ter o alias "**faturamento_medio**" e exibir o valor médio dos planos possuídos por pessoas usuárias até o momento.
+
+4. Por fim, a quarta coluna deve ter o alias "**faturamento_total**" e exibir o valor total obtido com os planos possuídos por pessuas usuárias.
+
+Para cada um desses dados, por se tratarem de valores monetários, deve-se arredondar o faturamento usando apenas duas casas decimais.
+
+Sua `QUERY` deve retornar a seguinte informação:
+
+![Faturamento atual](./images/faturamento_atual.png)
+
+O que será verificado:
+
+- Será validado se existe uma `QUERY` que exibe os dados corretos nas colunas `faturamento_minimo`, `faturamento_maximo`, `faturamento_medio` e `faturamento_total`.
+
+---
+
+## Desafio 7
+
+Mostre uma relação de todos os álbuns produzidos por cada pessoa artista, com a quantidade de seguidores que ela possui, de acordo com os detalhes a seguir. Para tal, crie uma `QUERY` com as seguintes colunas:
+
+1. A primeira coluna deve exibir o nome da pessoa artista, com o alias "**artista**".
+
+2. A segunda coluna deve exibir o nome do álbum, com o alias "**album**".
+
+3. A terceira coluna deve exibir a quantidade de pessoas seguidoras que aquela pessoa artista possui e deve possuir o alias "**seguidores**".
+
+Seus resultados devem estar ordenados de forma decrescente, baseando-se no número de pessoas seguidoras. Em caso de empate no número de pessoas, ordene os resultados pelo nome da pessoa artista em ordem alfabética e caso há artistas com o mesmo nome, ordene os resultados pelo nome do álbum alfabeticamente.
+
+Sua `QUERY` deve retornar a seguinte informação:
+
+![PerfilArtistas](./images/perfil_artistas.png)
+
+O que será verificado:
+
+- Será validado se existe uma `QUERY` que exibe os dados corretos nas colunas `artista`, `album` e `seguidores`.
+
+- Será validado se as colunas estão ordenadas de forma correta.
+
+---
+
+## Desafio 8
+
+Mostre uma relação dos álbuns produzidos por um artista específico, neste caso `"Walter Phoenix"`.
+Para isto crie uma `QUERY` que o retorno deve exibir as seguintes colunas:
+
+1. O nome da pessoa artista, com o alias "**artista**".
+
+2. O nome do álbum, com o alias "**album**".
+
+Os resultados devem ser ordenados pelo nome do álbum em ordem alfabética.
+
+Sua `QUERY` deve retornar a seguinte informação:
+
+![Álbuns da pessoa artista](./images/AlbunsDoArtista.png)
+
+O que será verificado:
+
+- Será validado se a `QUERY` retorna a coluna `artista` contendo o nome da pessoa artista e a coluna `album` contendo o nome do album.
+
+- Será validado se as colunas estão ordenadas de forma correta.
+
+---
+
+## Desafio 9
+
+Crie uma `QUERY` que exibe a quantidade de músicas que estão presentes atualmente no histórico de reprodução de uma pessoa usuária específica. Para este caso queremos saber quantas músicas estão no histórico do usuário `"Bill"` e a consulta deve retornar a seguinte coluna:
+
+1. O valor da quantidade, com o alias "**quantidade_musicas_no_historico**".
+
+Sua `QUERY` deve retornar a seguinte informação:
+
+![Quantidade de músicas no histórico](./images/quantidade_musicas_no_historico.png)
+
+
+O que será verificado:
+
+- Será validado se a `QUERY`, retorna a quantidade correta de canções presentes no histórico de reprodução da pessoa especificada.
+
+---
+
+## Desafio 10
+
+Crie uma `QUERY` que exiba o nome e a quantidade de vezes que cada canção foi tocada por pessoas usuárias do plano gratuito ou pessoal, de acordo com os detalhes a seguir:
+
+* A primeira coluna deve exibir o nome da canção, com o alias "**nome**";
+
+* A segunda coluna deve exibir a quantidade de pessoas que já escutaram aquela canção, com o alias "**reproducoes**";
+
+* Seus resultados devem estar agrupados pelo nome da canção e ordenados em ordem alfabética.
+
+Sua `QUERY` deve retornar a seguinte informação:
+
+![Canções premium](./images/cancoes_premium.png)
+
+O que será verificado:
+
+- Será validado se existe uma `QUERY` que exibe os dados corretos nas colunas `nome` e `reproducoes`.
+
+- Será validado se as colunas estão ordenadas de forma correta.
+
+## BÔNUS
+
+### Desafio 11
+
+Crie uma `QUERY` que altere o nome de algumas músicas e as ordene em ordem alfabética com as colunas abaixo se baseando nos seguintes critérios:
+
+1. O nome da música em seu estado normal com o alias **nome_musica**
+
+2. O nome da música atualizado com o alias **novo_nome**
+
+**Critérios**
+
+- Trocar a palavra **"Streets"** no final do nome de uma música por **"Code Review"**
+
+- Trocar a palavra **"Her Own"** no final do nome de uma música por **"Trybe"**
+
+- Trocar a palavra **"Inner Fire"** no final do nome de uma música por **"Project"**
+
+- Trocar a palavra **"Silly"** no final do nome de uma música por **"Nice"**
+
+- Trocar a palavra **"Circus"** no final do nome de uma música por **"Pull Request"**
+
+Sua `QUERY` retornar a seguinte informação:
+
+![Nome das músicas trocados](./images/replace_name.png)
+
+O que será verificado:
+
+- Será validado se existe uma `QUERY` que exibe os dados corretos nas colunas `nome_musica` e `novo_nome`.
+
+- Será validado se as colunas estão ordenadas de forma correta.
+
+---
+
+## Depois de terminar o desenvolvimento
+
+Para **"entregar"** seu projeto, siga os passos a seguir:
+
+* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas
+  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**
+  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`
+
+Se ainda houver alguma dúvida sobre como entregar seu projeto, [aqui tem um video explicativo](https://vimeo.com/362189205).
+
+---
+
+### Revisando um pull request
+
+À medida que você e as outras pessoas que estudam na Trybe forem entregando os projetos, vocês receberão um alerta via Slack para também fazer a revisão dos Pull Requests dos seus colegas. Fiquem atentos às mensagens do "Pull Reminders" no Slack!
+
+Use o material que você já viu sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os projetos que chegaram para você.
+
+---
+
+# Avisos Finais
+
+
+Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
+
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
+
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, nãose assuste se isso acontecer, ok?
 
 ---
