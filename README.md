@@ -35,8 +35,7 @@ Para este projeto, você vai criar uma loja de itens medievais, no formato de um
 Oservações: 
 
 - O arquivo com os dados para criação do Banco de Dados foi fornecido pela Trybe;
-- O desenvolvimento de todo o projeto se encontra dentro da pasta `./src`;
-- 
+- O desenvolvimento de todo o projeto se encontra dentro da pasta `./src`.
 
 <br/>
 
